@@ -1,11 +1,14 @@
+require('dotenv').config()
 
-   
 const bodyParser = require('body-parser')
 const express = require('express');
 const cors = require('cors');
 
-const getTarget = require('./routes/getTarget');
-const postTarget = require('./routes/postTarget');
+const routerGetTarget = require('./routes/getTarget');
+const routerPostTarget = require('./routes/postTarget');
+const routerStartBot = require('./routes/startBot');
+const routerPostBotConfig = require('./routes/postBotConfig');
+
 
 
 
@@ -20,6 +23,13 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
 
-app.use('/getTarget', getTarget);
-app.use('/postTarget', postTarget);
+app.use('/getTarget', routerGetTarget);
+app.use('/postTarget', routerPostTarget);
+app.use('/startBot', routerStartBot);
+app.use('/postBotConfig', routerPostBotConfig);
+
+
+app.listen(PORT, () => {
+  console.log(`Berry's Backend is running on ${PORT}......`);
+});
 

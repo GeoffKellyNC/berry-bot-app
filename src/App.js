@@ -1,36 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import * as actions from './store/berry-twitch/action-creators';
+import { Route } from 'react-router-dom';
 
-const initialFormValues = {
-    target: ''
-}
+//components 
+import Home from './views/Home';
 
-const onChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({
-        ...formValues,
-        [name]: value
-    })
-}
 
-const handleSubmit = (e) => {
-    e.preventDefault();
-    axios.post('/', formValues)
-}
 
-const App = () => {
-    const [formValues, setFormValues] = useState(initialFormValues);
+
+const App = (props) => {
+    const { 
+        target,
+        setTarget } = props;
+
     return (
         <div>
-            <h1>Hello World</h1>
-            <form>
-                <label>
-                    Target:
-                    <input type="text" value={formValues.target} onChange={(e) => onChange(e)} />
-                </label>
-                <button type="submit">Submit</button>
-            </form>
+            <Route exact path="/">
+                <Home />
+            </Route>
+            
+            <p>Target: {target}</p>
         </div>
     );
 }
 
-export default App;
+const mapSateToProps = (state) => {
+    return {
+        target: state.target
+    }
+}
+
+
+export default connect(mapSateToProps, actions)(App);

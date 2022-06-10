@@ -1,1 +1,0 @@
-export const GET_TARGET = 'GET_TARGET';

@@ -7,3 +7,5 @@ router.get("/", (req, res) => {
     res.send(target);
     
   })
+
+  module.exports = router;

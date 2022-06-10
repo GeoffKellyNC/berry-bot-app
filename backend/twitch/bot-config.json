@@ -1,0 +1,15 @@
+{
+    "target": "",
+    "tokenType": "",
+    "scope": [
+        "channel:moderate",
+        "chat:edit",
+        "chat:read"
+    ],
+    "expiresIn": 14767,
+    "obtainmentTimestamp": 1654827327167,
+    "clientId": "",
+    "clientSecret": "",
+    "accessToken": "",
+    "refreshToken": ""
+}

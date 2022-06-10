@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import App from './App';
 import './master-css/index.css';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -9,9 +9,7 @@ import theme from './theme/theme';
 import { Provider } from 'react-redux';
 import { applyMiddleware, compose, legacy_createStore } from 'redux'
 import thunk from 'redux-thunk'
-import reducer from './redux/reducer'
-
-
+import reducer from './store/rootreducer'
 
 
 

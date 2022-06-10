@@ -59,7 +59,12 @@ module.exports={
          * resolve the one with the extension listed first in the array and skip the rest. 
          * This is what enables users to leave off the extension when importing
          */
-        extensions: ['.js','.jsx','.json']
+        extensions: ['.js','.jsx','.json'],
+        alias: {
+            '@': path.resolve(__dirname, 'src'),
+            '@assets': path.resolve(__dirname, 'src/assets'),
+            '@components': path.resolve(__dirname, 'src/components'),
+          },
     },
     module:{
         /** "rules"
