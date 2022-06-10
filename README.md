@@ -140,6 +140,10 @@ See the [open issues](https://github.com/geoffkellync/crypto-app-2.0/issues) for
 <!-- change-log -->
 ## change-log
 
+### 0.0.1 - NEW FEATURES AND BUG FIXES 06/09/2021
+- [x] Implemented Twitch API
+- [x] Implemented Adding Target (Channel) to the Bot Via Web Form
+
 ### NEW FEATURES AND CHANGES 06/08/2022
 - [x] Added Packages
       - [x] Axios

@@ -16,7 +16,6 @@
     "url": "https://github.com/GeoffKellyNC/berry-bot-app/issues"
   },
   "homepage": "https://github.com/GeoffKellyNC/berry-bot-app#readme",
-
   "dependencies": {
     "@discordjs/builders": "^0.15.0",
     "@discordjs/rest": "^0.5.0",
@@ -27,6 +26,7 @@
     "@twurple/eventsub": "^5.1.6",
     "body-parser": "^1.20.0",
     "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "discord-api-types": "^0.33.4",
     "discord.js": "^13.8.0",
     "dotenv": "^16.0.1",
