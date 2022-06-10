@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { berry } = require('../twitch/berry');
+const { berry } = require('../../twitch/berry');
 
 
 const startBerry = () => {

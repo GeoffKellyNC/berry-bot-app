@@ -4,10 +4,10 @@ const bodyParser = require('body-parser')
 const express = require('express');
 const cors = require('cors');
 
-const routerGetTarget = require('./routes/getTarget');
-const routerPostTarget = require('./routes/postTarget');
-const routerStartBot = require('./routes/startBot');
-const routerPostBotConfig = require('./routes/postBotConfig');
+const routerGetTarget = require('./routes/GET/getTarget');
+const routerPostTarget = require('./routes/POST/postTarget');
+const routerStartBot = require('./routes/POST/startBot');
+const routerPostBotConfig = require('./routes/POST/postBotConfig');
 
 
 
