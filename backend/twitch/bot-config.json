@@ -6,10 +6,18 @@
         "chat:edit",
         "chat:read"
     ],
-    "expiresIn": 14767,
-    "obtainmentTimestamp": 1654827327167,
+    "expiresIn": 14518,
+    "obtainmentTimestamp": 1656277971915,
     "clientId": "",
     "clientSecret": "",
     "accessToken": "",
-    "refreshToken": ""
+    "refreshToken": "",
+    "commandConfig": {
+        "discordLink": "",
+        "voteStart": "",
+        "voteEnd": ""
+    },
+    "botState": {
+        "running": true
+    }
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './master-css/index.css';
-import { BrowserRouter as Router } from 'react-router-dom';
 import {ThemeProvider} from 'styled-components';
 import theme from './theme/theme';
 
@@ -23,12 +22,10 @@ const store = legacy_createStore(reducer, composeWithDevTools(applyMiddleware(th
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
       <ThemeProvider theme={theme}>
         <Provider store={store}>
           <App />
         </Provider>
       </ThemeProvider>
-    </Router>
   </React.StrictMode>
 );
