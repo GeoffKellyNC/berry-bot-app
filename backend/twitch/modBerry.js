@@ -43,7 +43,7 @@ const setUserPoints = async (user, points) => {
 const patchPoints = async (id, obj,user) => {
     const response = axios.patch(`${pointEndpoint}/${id}`, obj)
     .then(console.log(`${user} points have been updated to ${obj.points} `))
-    .catch(err => console.log('Patch Points Func Error: ', err)) //? Console.log
+    .catch(err => console.log('Patch Points Function Error: ', err)) //? Console.log
 }
 
 const checkUser = async (user, pointsData) => {
