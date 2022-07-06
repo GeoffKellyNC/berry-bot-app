@@ -34,7 +34,7 @@ export const startVote = () => (dispatch) => {
         .catch(err => console.error(err))
 }
 
-export const startMod = () => {
+export const startMod = () => (dispatch) => {
     axios.post('http://localHost:9001/startMod', { data: 'startMod'})
         .then(res => {
             return
