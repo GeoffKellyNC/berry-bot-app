@@ -1,11 +1,7 @@
 {
   "target": "xberrybot",
   "tokenType": "",
-  "scope": [
-    "channel:moderate",
-    "chat:edit",
-    "chat:read"
-  ],
+  "scope": ["channel:moderate", "chat:edit", "chat:read"],
   "expiresIn": 15257,
   "obtainmentTimestamp": 1657126155496,
   "clientId": "",
