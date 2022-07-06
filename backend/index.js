@@ -11,7 +11,6 @@ const routerPostBotConfig = require('./routes/POST/postBotConfig');
 const routerGetBotConfig = require('./routes/GET/getBotConfig');
 const routerStartVote = require('./routes/POST/startVote')
 const routerGetUserPoints = require('./routes/GET/getUserPoints')
-const routerPostUserPoints = require('./routes/POST/postUserPoints')
 
 
 
@@ -39,7 +38,6 @@ app.use('/postTarget', routerPostTarget); // set target in bot config
 app.use('/startBot', routerStartBot); // route to the start bot function
 app.use('/postBotConfig', routerPostBotConfig); // route used to set bot config
 app.use('/startVote', routerStartVote) // route used to start voting
-app.use('/userPoints', routerPostUserPoints) // route to post user points 
 
 
 app.listen(PORT, () => {

@@ -4,17 +4,21 @@ const fs = require('fs');
 const path = require('path');
 
 const { berry } = require('../../twitch/berry');
+const { modBerry } = require('../../twitch/modBerry');
 
 
 const startBerry = () => {
     berry();
+    modBerry();
   } 
 
 const setBotState = async () => {
-    const configLocation = path.join(__dirname, 'bot-config.json')
-    const configData = JSON.parse(await fs.readFile(configLocation, 'utf-8'))
-    configData.botState.running = !configData.botState.running
-    await fs.writeFile(configLocation, JSON.stringify(configData, null, 4, 'UTF-8'))
+  const configLocation = path.join(__dirname, '../../twitch/bot-config.json')
+  const data = await fs.readFileSync(configLocation, 'utf8');
+  const config = await JSON.parse(data);
+  const newData = {...config, botState: !config.botState.running};
+  await fs.writeFileSync(configLocation, JSON.stringify(newData));
+
 }
 
 

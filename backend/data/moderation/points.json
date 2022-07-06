@@ -1,9 +1,15 @@
-[{
-    "user": "Santiago",
-    "points": 10
-},
-{
-    "user" : "Juan",
-    "points" : 20
-}
+[
+    {
+        "user": "Santiago",
+        "points": 10
+    },
+    {
+        "user": "Juan",
+        "points": 20
+    },
+    {
+        "user": "rhyeznc",
+        "points": 1
+    },
+    "\"rhyeznc\""
 ]
