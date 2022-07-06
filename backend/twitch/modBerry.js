@@ -65,24 +65,29 @@ const processMessage = async (user, message, chatClient, channel) => {
     USER 🧍: ${user}  ➡ 
     MESSAGE 💬: ${message} ➡`)
 
-    if(bannedWords.includes(message) && !whiteList.includes(user)){
-        let pointsData = await getPointsData()
-        let userExists = await checkUser(user, pointsData)
-        console.log(userExists)
+    try{
 
-        chatClient.say(channel, `@${user} please do not used banned language!`)
+        if(bannedWords.includes(message) && !whiteList.includes(user)){
+            let pointsData = await getPointsData()
+            let userExists = await checkUser(user, pointsData)
+            console.log(userExists)
 
-        if(!userExists){
-            setUserPoints(user, 1)
-            console.log(`${user} was not found.. User set!`) //? Console.log 
+            chatClient.say(channel, `@${user} please do not used banned language!`)
+
+            if(!userExists){
+                setUserPoints(user, 1)
+                console.log(`${user} was not found.. User set!`) //? Console.log 
+            }
+            if(userExists){
+                const userObj = pointsData.find(account => account.user === user)
+                let points = userObj.points
+                const updatedObj = {...userObj, points: points += 1}
+                const userId = userObj.id
+                patchPoints(userId,updatedObj,user)
+            }
         }
-        if(userExists){
-            const userObj = pointsData.find(account => account.user === user)
-            let points = userObj.points
-            const updatedObj = {...userObj, points: points += 1}
-            const userId = userObj.id
-            patchPoints(userId,updatedObj,user)
-        }
+    }catch(err){
+        console.log('Moderation Error: ', err)
     }
 
 }

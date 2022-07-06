@@ -34,6 +34,14 @@ export const startVote = () => (dispatch) => {
         .catch(err => console.error(err))
 }
 
+export const startMod = () => {
+    axios.post('http://localHost:9001/startMod', { data: 'startMod'})
+        .then(res => {
+            return
+        })
+        .catch(err => console.error(err))
+}
+
 export const configureBerry = (botConfig) => (dispatch) => {
     axios.post('http://localHost:9001/postBotConfig', { botConfig })
         .then(res => {
