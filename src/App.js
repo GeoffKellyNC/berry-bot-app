@@ -1,35 +1,37 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import * as actions from './store/berry-twitch/action-creators';
-import { Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+
 
 //components 
+import Header from './components/header/Header';
 import Home from './views/Home';
+import ConfigureBot from './views/ConfigureBot';
 
 
 
 
-const App = (props) => {
-    const { 
-        target,
-        setTarget } = props;
+
+const App = () => {
+  
+
+     
 
     return (
-        <div>
-            <Route exact path="/">
-                <Home />
-            </Route>
-            
-            <p>Target: {target}</p>
-        </div>
+        <>
+            <Router>
+                <Header />
+                <div>
+                    <Routes>
+                        <Route path="/configure" element = {<ConfigureBot />} />
+                        <Route exact path="/" element = {<Home />} />
+                    </Routes>
+                </div>
+            </Router>
+        </>
     );
 }
 
-const mapSateToProps = (state) => {
-    return {
-        target: state.target
-    }
-}
 
 
-export default connect(mapSateToProps, actions)(App);
+export default App;

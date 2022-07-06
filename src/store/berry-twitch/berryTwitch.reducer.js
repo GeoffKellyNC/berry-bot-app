@@ -9,20 +9,12 @@ export function target(state = '', action) {
   }
 }
 
-const initialBotConfig = {
-  accessToken: "",
-  clientId: "",
-  clientSecret: "",
-  refreshToken: "",
-  tokenType: "",
-  expiresIn: "",
-}
 
-export function botConfig(state = initialBotConfig, action) {
+export function botConfig(state = {}, action) {
   switch (action.type) {
     case types.GET_BOT_CONFIG:
       return action.payload;
     default:
       return state;
   }
-}
+} 

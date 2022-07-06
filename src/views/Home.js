@@ -1,18 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import styled from 'styled-components'
 
-// components
-import StartbotBtn from '../components/bottons/StartbotBtn';
-import TargetChannel from '../components/forms/TargetChannel';
-import ConfigureBotForm from '../components/forms/ConfigureBot.form';
+import Panel from '../components/control-panel/Panel'
+
 
 function Home() {
+
+
   return (
-    <div>
-        <StartbotBtn />
-        <TargetChannel />
-        <ConfigureBotForm />
-    </div>
+    <HomeStyled>
+      <Panel  />
+    </HomeStyled>
   )
 }
 
+
+
 export default Home
+
+const HomeStyled = styled.div`
+  color: white;
+
+`

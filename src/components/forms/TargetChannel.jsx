@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import * as action from '../../store/berry-twitch/action-creators'
+import styled from 'styled-components';
 
 
 const initialFormValues = {
@@ -31,18 +32,19 @@ function TargetChannel(props) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <TargetForm onSubmit={handleSubmit}>
             <label>
-                Target:
+                Channel:
                 <input 
                     type="text" 
                     value = {formValues.target} 
                     onChange={handleChange} 
                     name="target"
+                    className = 'target-text-input'
                 />
             </label>
             <button type="submit">Submit</button>
-        </form>
+        </TargetForm>
     )
 }
 
@@ -55,3 +57,33 @@ const mapStateToProps = (state) => {
 
 
 export default connect(mapStateToProps, action)(TargetChannel)
+
+const TargetForm = styled.form`
+    font-family: ${pr => pr.theme.fonts.primary};
+    font-size: ${pr => pr.theme.fontSizes.medium};
+    color: white;
+    margin: 2% auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    label {
+        display: block;
+        margin-bottom: 1%;
+    }
+
+    input {
+        width: 20em;
+        margin-bottom: 1%;
+        padding: 0.5%;
+        border: 1px solid ${pr => pr.theme.colors.secondary};
+        border-radius: 5px;
+        font-size: ${pr => pr.theme.fontSizes.medium};
+        color: ${pr => pr.theme.colors.berry};
+    }
+    
+
+
+`
