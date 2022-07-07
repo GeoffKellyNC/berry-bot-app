@@ -28,22 +28,38 @@ const getBotConfig = async () => {
 }
 
 const getPointsData = async () => {
-    const response = await axios.get(pointEndpoint)
-    console.log('getPoints Func Response: ', response.data) //! -- DEBUGGING
-    const data = response.data
-    return data
+    try{
+        const response = await axios.get(pointEndpoint)
+        console.log('getPoints Func Response: ', response.data) //! -- DEBUGGING
+        const data = response.data
+        return data
+        
+    }catch(err){
+        console.log('Get Points Data Func: ', err)
+    }
+
 }
 
 const setUserPoints = async (user, points) => {
-    const newUser = { user, points }
-    const response = await axios.post(pointEndpoint, newUser)
-    return response.status
+    try {
+        const newUser = { user, points }
+        const response = await axios.post(pointEndpoint, newUser)
+        return response.status
+
+    }catch(err){
+        console.log('Set User Points Func Error: ', err)
+    }
 }
 
 const patchPoints = async (id, obj,user) => {
-    const response = axios.patch(`${pointEndpoint}/${id}`, obj)
-    .then(console.log(`${user} points have been updated to ${obj.points} `))
-    .catch(err => console.log('Patch Points Function Error: ', err)) //? Console.log
+    try{
+        const response = axios.patch(`${pointEndpoint}/${id}`, obj)
+        return response
+
+    }catch(err){
+        console.log('Patch Points Error: ', err)
+    }
+
 }
 
 const checkUser = async (user, pointsData) => {
@@ -56,6 +72,15 @@ const checkUser = async (user, pointsData) => {
         }
     }
     return found
+}
+
+const handlePunishment = async(user, points, chatClient, channel) => {
+    if (points <= 3) return
+    if (points >= 5 ){
+        chatClient.say(channel, `${user} has been timed out for getting to many points!`)
+        await chatClient.timeout(channel, user, 30, 'Berry Bot Point Timeout > 5')
+        console.log(`${user} has been timed out for 30 seconds.`)
+    }
 }
 
 const processMessage = async (user, message, chatClient, channel) => {
@@ -83,7 +108,9 @@ const processMessage = async (user, message, chatClient, channel) => {
                 let points = userObj.points
                 const updatedObj = {...userObj, points: points += 1}
                 const userId = userObj.id
-                patchPoints(userId,updatedObj,user)
+                const newPoints = updatedObj.points;
+                await patchPoints(userId,updatedObj,user)
+                await handlePunishment(user, newPoints, chatClient,channel)
             }
         }
     }catch(err){
