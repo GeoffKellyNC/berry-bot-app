@@ -20,15 +20,12 @@ const Panel = (props) => {
 
     const [botRunning , setBotRunning] = useState(localStorage.getItem('botRunning'));
 
-    // use useEffect to set botRunning to false in local storage on first render
 
     useEffect(() => {
         getTarget()
     }
         , [])
         
-
-
 
     return (
         <div>

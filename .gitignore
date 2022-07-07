@@ -104,3 +104,4 @@ dist
 .tern-port
 t.tokens.txt
 backend/ecosystem.config.js
+plan.txt

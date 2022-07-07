@@ -7,11 +7,29 @@ const { promises: fs } = require('fs')
 const path = require('path')
 const { whiteList}  = require('../data/moderation/whitelist')
 
-const bannedWords = ["anal", "anus", "arse", "balls", "bitch", "blowjob", "blow job", "coon", "cunt", "dyke", "fag",  "homo",  "nigger", "nigga", "penis", "slut", "smegma", "spunk", "twat", "whore"]
 
+
+// --- End Points ---//
 const pointEndpoint = process.env.USER_POINTS_ENDPOINT
+const modEp = process.env.BOT_CONFIG_MOD_ENDPOINT
 
 
+
+
+
+const getConfigData = async (type) => {
+    switch(type){
+        case 'getwords':
+            console.log('Getting Banned Words')
+            const res = await axios.get(modEp) //! -- DEBUGGING
+            // console.log('Res Data: ', res.data) //! -- DEBUGGING
+            const bannedWords = res.data[0].bannedWords
+            console.log('Banned Words: ', bannedWords) //! -- DEBUGGING
+            return bannedWords
+        default:
+            console.log('There was an error in getConfigData $modBerry.js')
+    }
+}
 
 const getTarget = async () => {
     const targetLocation = path.join(__dirname, 'bot-config.json')
@@ -83,7 +101,7 @@ const handlePunishment = async(user, points, chatClient, channel) => {
     }
 }
 
-const processMessage = async (user, message, chatClient, channel) => {
+const processMessage = async (user, message, chatClient, channel, bannedWords) => {
 
 
     console.log(`
@@ -141,13 +159,15 @@ async function modBerry (){
         channels: [TARGET]
     })
 
+    const bannedWords = await getConfigData('getwords')
+
     await chatClient.connect()
     console.log('Berry Mod Connected to Twitch Chat')
 
 
 
     chatClient.onMessage( async(channel, user, message, self) => {
-       await processMessage(user, message, chatClient, channel)
+       await processMessage(user, message, chatClient, channel, bannedWords)
     })
 }
 

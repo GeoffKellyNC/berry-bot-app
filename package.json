@@ -1,6 +1,6 @@
 {
   "name": "berry-bot-app",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Twitch Bot with a web interface. Multifunctional",
   "main": "index.js",
   "scripts": {
