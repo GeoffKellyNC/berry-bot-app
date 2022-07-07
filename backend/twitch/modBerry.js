@@ -21,10 +21,8 @@ const getConfigData = async (type) => {
     switch(type){
         case 'getwords':
             console.log('Getting Banned Words')
-            const res = await axios.get(modEp) //! -- DEBUGGING
-            // console.log('Res Data: ', res.data) //! -- DEBUGGING
+            const res = await axios.get(modEp)
             const bannedWords = res.data[0].bannedWords
-            console.log('Banned Words: ', bannedWords) //! -- DEBUGGING
             return bannedWords
         default:
             console.log('There was an error in getConfigData $modBerry.js')
