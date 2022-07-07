@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 
 // GET 
-app.use('/getTarget', routerGetTarget); // route to get target
+app.use('/getTarget', routerGetTarget); // route to get target 
 app.use('/botConfig', routerGetBotConfig); // route to retrieve bot config data
 
 

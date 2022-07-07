@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { target } = require('../../twitch/bot-config');
+const botConfig = require('../../twitch/bot-config');
 
 
-router.get("/", (req, res) => {   
-    res.send(target);
+router.get("/", (req, res) => {
+    res.send(botConfig.target);
     
   })
 
-  module.exports = router;
+  module.exports = router; 

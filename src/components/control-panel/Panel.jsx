@@ -14,7 +14,8 @@ const Panel = (props) => {
     const { 
         target, 
         startVote, 
-        startMod 
+        startMod,
+        getTarget, 
     } = props;
 
     const [botRunning , setBotRunning] = useState(localStorage.getItem('botRunning'));
@@ -22,10 +23,7 @@ const Panel = (props) => {
     // use useEffect to set botRunning to false in local storage on first render
 
     useEffect(() => {
-        //set local storage to false only if it is not true
-        if(!localStorage.getItem('botRunning')){
-            localStorage.setItem('botRunning', false)
-        }
+        getTarget()
     }
         , [])
         

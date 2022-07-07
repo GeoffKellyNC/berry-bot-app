@@ -5,23 +5,14 @@ const css = require("css-loader");
 After that apply all the rules in module.rules and produce the output and place it in main.js in the public folder.*/
 
 module.exports={
-    /** "mode"
-     * the environment - development, production, none. tells webpack 
-     * to use its built-in optimizations accordingly. default is production 
-     */
+
     mode: "development", 
-    /** "entry"
-     * the entry point 
-     */
+
     entry: "./src/index.js", 
     output: {
-        /** "path"
-         * the folder path of the output file 
-         */
+
         path: path.resolve(__dirname, "public"),
-        /** "filename"
-         * the name of the output file 
-         */
+
         filename: "main.js",
 
         publicPath: "/"

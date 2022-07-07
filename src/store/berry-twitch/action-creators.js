@@ -6,6 +6,7 @@ export const setTarget = (target) => (dispatch) => {
     axios.post('http://localHost:9001/postTarget', { target })
         .then(res => {
             const target = res.data;
+            res.status === 200 ? console.log('Target Set to: ' + target) : console.log('Error setting target');
             dispatch({
                 type: types.GET_TARGET,
                 payload: target
@@ -14,6 +15,19 @@ export const setTarget = (target) => (dispatch) => {
         .catch(err => {
             console.error(err);
         })
+}
+
+export const getTarget = () => (dispatch) => {
+    axios.get('http://localHost:9001/getTarget')
+        .then(res => {
+            const target = res.data;
+            dispatch({type: types.GET_TARGET, payload: target })
+            return target
+        })
+        .catch(err => {
+            console.error(err);
+        })
+        
 }
 
 export const startBerry = () => (dispatch) => {
