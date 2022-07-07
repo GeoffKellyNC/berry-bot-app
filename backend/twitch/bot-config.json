@@ -1,1 +1,21 @@
-{"target":"xberrybot","tokenType":"","scope":["channel:moderate","chat:edit","chat:read"],"expiresIn":14662,"obtainmentTimestamp":1657140695637,"clientId":"nkg5cs42pv8r2pm7hebudred3zkzi4","clientSecret":"e8hblyqorttg2rs6n1q7tvkpdspqsr","accessToken":"zi09yyc3u20o5kwrhuvrfgucziaunt","refreshToken":"1imn1xttjiotp93ejs8p2jv1b9eolz814jvwkmmatjoeunfps3","commandConfig":{"discordLink":"","voteStart":"","voteEnd":""},"botState":true}
+{
+    "target": "",
+    "tokenType": "",
+    "scope": [
+        "channel:moderate",
+        "chat:edit",
+        "chat:read"
+    ],
+    "expiresIn": 13772,
+    "obtainmentTimestamp": 1657156020578,
+    "clientId": "",
+    "clientSecret": "",
+    "accessToken": "",
+    "refreshToken": "",
+    "commandConfig": {
+        "discordLink": "",
+        "voteStart": "",
+        "voteEnd": ""
+    },
+    "botState": false
+}

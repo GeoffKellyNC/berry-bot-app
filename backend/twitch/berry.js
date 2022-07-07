@@ -20,6 +20,11 @@ const getBotConfig = async () => {
     return configData
 }
 
+const getLink = async (message) => {
+    //get url out of message 
+    console.log('Queue Message: ', message)
+}
+
 async function berry() {
     const TARGET = await getTarget()
     const configData = await getBotConfig()

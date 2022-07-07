@@ -89,11 +89,14 @@ async function votingBerry() {
                 chatClient.say(channel, ` Voting Ended! Banger Score:  ${average.toFixed(2)}`)
                 voted = []
                 votes = []
+                setTimeout(() => {
+                    endProcess(chatClient, date)
+                }
+                , 2000)
             }else{
                 chatClient.say(channel, `@${user} you are not authorized to end the vote`)
             }
         }
-        await endProcess(chatClient, date)
 
     })
 }
