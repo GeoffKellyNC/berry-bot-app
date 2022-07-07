@@ -17,12 +17,18 @@ export default Header
 
 
 const HeaderStyled = styled.header`
-  background-color: ${pr => pr.theme.colors.berryLight};
+  ${'' /* background-color: ${pr => pr.theme.colors.berryLight}; */}
   width: 100%;
   height: 5em;
   font-family: ${pr => pr.theme.fonts.primary};
   color: white;
   font-size: ${pr => pr.theme.fontSizes.xlarge};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2em;
+  box-sizing: border-box;
+  
 
 
 
