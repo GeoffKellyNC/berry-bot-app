@@ -7,7 +7,7 @@ const { promises: fs } = require('fs')
 const path = require('path')
 const { whiteList}  = require('../data/moderation/whitelist')
 
-const bannedWords = ["anal", "anus", "arse", "balls", "bitch", "blowjob", "blow job", "coon", "cunt", "dyke", "fag",  "homo",  "nigger", "nigga", "penis", "slut", "smegma", "spunk", "twat", "whore", "test"]
+const bannedWords = ["anal", "anus", "arse", "balls", "bitch", "blowjob", "blow job", "coon", "cunt", "dyke", "fag",  "homo",  "nigger", "nigga", "penis", "slut", "smegma", "spunk", "twat", "whore"]
 
 const pointEndpoint = process.env.USER_POINTS_ENDPOINT
 
