@@ -16,10 +16,10 @@ export default Nav
 
 const StyledNav = styled.div`
   a{
-    color: white;
+    font-family: ${pr => pr.theme.fonts.primary};
+    color: ${pr => pr.theme.colors.berry};
     text-decoration: none;
     margin-right: 1em;
-    border-bottom: 1px solid white;
   }
 
 
