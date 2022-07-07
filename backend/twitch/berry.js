@@ -6,6 +6,9 @@ const { ChatClient } = require('@twurple/chat');
 const path = require('path')
 const axios = require('axios')
 
+const pointEndpoint = process.env.USER_POINTS_ENDPOINT
+
+
 const getTarget = async () => {
     //get target from json file 
     const targetLocation = path.join(__dirname, 'bot-config.json')
@@ -18,6 +21,19 @@ const getBotConfig = async () => {
     const configLocation = path.join(__dirname, 'bot-config.json')
     const configData = JSON.parse(await fs.readFile(configLocation, 'utf-8'))
     return configData
+}
+
+const getPoints = async (user) => {
+    try{
+        const res = await axios.get(pointEndpoint)
+        const pointsData = res.data
+        const userObj = await pointsData.find(account => account.user === user)
+        const userPoints = userObj.points
+        return userPoints
+    }catch(err){
+        console.log('Error Getting Points berry.js: ', err)
+    }
+
 }
 
 async function berry() {
@@ -50,6 +66,10 @@ async function berry() {
         switch (message) {
             case '!ping':
                 chatClient.say(channel, 'Pong!')
+                break;
+            case '!points':
+                const userPoints = await getPoints(user)
+                chatClient.say(channel,`${user} you have ${userPoints} points.`)
                 break;
             default:
                 break;

@@ -19,7 +19,7 @@ export const setTarget = (target) => (dispatch) => {
 export const startBerry = () => (dispatch) => {
     axios.post('http://localHost:9001/startBot', { data: 'startBot' })
         .then(res => {
-            console.log(res)
+            res.status === 200 ? console.log('Bot Started Successfully') : console.log('There was an error starting the bot: ', res)
         })
         .catch(err => {
             console.error(err);
@@ -29,7 +29,15 @@ export const startBerry = () => (dispatch) => {
 export const startVote = () => (dispatch) => {
     axios.post('http://localHost:9001/startVote', { data: 'startVote'})
         .then(res => {
-            console.log(res)
+            res.status === 200 ? console.log('Vote Started Successfully') : console.log('There was an error starting the vote: ', res)
+        })
+        .catch(err => console.error(err))
+}
+
+export const startMod = () => (dispatch) => {
+    axios.post('http://localHost:9001/startMod', { data: 'startMod'})
+        .then(res => {
+            res.status === 200 ? console.log('Moderation Started Successfully') : console.log('There was an error starting Moderation: ', res)
         })
         .catch(err => console.error(err))
 }
@@ -43,18 +51,3 @@ export const configureBerry = (botConfig) => (dispatch) => {
             console.error(err);
         })
 }
-
-// export const getBotConfig = () => (dispatch) => {
-//     axios.get('http://localHost:9001/botConfig')
-//         .then(res => {
-//             const botConfig = res.data;
-//             dispatch({
-//                 type: types.GET_BOT_CONFIG,
-//                 payload: botConfig
-//             });
-//         })
-//         .catch(err => {
-//             console.error(err);
-//         })
-
-// }

@@ -4,12 +4,10 @@ const fs = require('fs');
 const path = require('path');
 
 const { berry } = require('../../twitch/berry');
-const { modBerry } = require('../../twitch/modBerry');
 
 
 const startBerry = () => {
     berry();
-    modBerry();
   } 
 
 const setBotState = async () => {

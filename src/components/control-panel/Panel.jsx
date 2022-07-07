@@ -7,10 +7,16 @@ import * as actions from '../../store/berry-twitch/action-creators'
 // Importing Components 
 import StartbotBtn from '../bottons/StartbotBtn'
 import StartVoteBtn from '../bottons/startVote.btn'
+import StartMod from '../bottons/StartMod'
 
 
 const Panel = (props) => {
-    const { target, startVote } = props;
+    const { 
+        target, 
+        startVote, 
+        startMod 
+    } = props;
+
     const [botRunning , setBotRunning] = useState(localStorage.getItem('botRunning'));
 
     // use useEffect to set botRunning to false in local storage on first render
@@ -35,6 +41,7 @@ const Panel = (props) => {
             <div className = 'panel-btns'>
                 <StartbotBtn />
                 <StartVoteBtn startVote = {startVote} />
+                <StartMod startMod = { startMod } />
             </div>
 
         </div>
