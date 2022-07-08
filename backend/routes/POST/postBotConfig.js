@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
     //Restart Server
     process.exit()
 
-    res.send(configData)
+    res.send(res.status)
 })
 
 module.exports = router;

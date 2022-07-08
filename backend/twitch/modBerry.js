@@ -8,13 +8,10 @@ const path = require('path')
 const { whiteList}  = require('../data/moderation/whitelist')
 
 
-
 // --- End Points ---//
 const pointEndpoint = process.env.USER_POINTS_ENDPOINT
 const modEp = process.env.BOT_CONFIG_MOD_ENDPOINT
-
-
-
+const botConfigEP = process.env.BOT_CONFIG_BOT_ENDPOINT 
 
 
 const getConfigData = async (type) => {
@@ -30,9 +27,9 @@ const getConfigData = async (type) => {
 }
 
 const getTarget = async () => {
-    const targetLocation = path.join(__dirname, 'bot-config.json')
-    const targetData = JSON.parse(await fs.readFile(targetLocation, 'utf-8'))
-    const target = targetData.target
+    console.log('Getting Target....')
+    const res = await axios.get(botConfigEP)
+    const target = res.data[0].target
     return target
 }
 
@@ -46,7 +43,6 @@ const getBotConfig = async () => {
 const getPointsData = async () => {
     try{
         const response = await axios.get(pointEndpoint)
-        console.log('getPoints Func Response: ', response.data) //! -- DEBUGGING
         const data = response.data
         return data
         
@@ -75,7 +71,6 @@ const patchPoints = async (id, obj,user) => {
     }catch(err){
         console.log('Patch Points Error: ', err)
     }
-
 }
 
 const checkUser = async (user, pointsData) => {
@@ -107,7 +102,6 @@ const processMessage = async (user, message, chatClient, channel, bannedWords) =
     MESSAGE 💬: ${message} ➡`)
 
     try{
-
         if(bannedWords.includes(message) && !whiteList.includes(user)){
             let pointsData = await getPointsData()
             let userExists = await checkUser(user, pointsData)
@@ -132,7 +126,6 @@ const processMessage = async (user, message, chatClient, channel, bannedWords) =
     }catch(err){
         console.log('Moderation Error: ', err)
     }
-
 }
 
 async function modBerry (){
@@ -161,7 +154,6 @@ async function modBerry (){
 
     await chatClient.connect()
     console.log('Berry Mod Connected to Twitch Chat')
-
 
 
     chatClient.onMessage( async(channel, user, message, self) => {

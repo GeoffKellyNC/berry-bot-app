@@ -89,7 +89,7 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, action)(ConfigureBot)
 
 
-const ConfigureBotStyled = styled.div`
+const ConfigureBotStyled = styled.form`
     font-family: ${pr => pr.theme.fonts.primary};
     font-size: ${pr => pr.theme.fontSizes.medium};
     color: white;
