@@ -23,12 +23,11 @@ const Panel = (props) => {
 
     useEffect(() => {
         getTarget()
-    }
-        , [])
+    }, [])
         
 
     return (
-        <div>
+        <PanelStyled>
             <div className='panel-info-display'>
                 <h3 className = 'control-panel-text'> Control Panel </h3>
                 <h4 className = 'target-channel-text'> Target: <span>{ target.length === 0 ? 'No Target Set' : target }</span></h4>
@@ -39,7 +38,7 @@ const Panel = (props) => {
                 <StartMod startMod = { startMod } />
             </div>
 
-        </div>
+        </PanelStyled>
     )
 }
 
@@ -51,3 +50,25 @@ const mapStateToProps = state => {
   
 
 export default connect(mapStateToProps, actions)(Panel)
+
+
+const PanelStyled = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    .panel-info-display{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 1em;
+        border-bottom: 1px solid #fff;
+    }
+
+
+
+`

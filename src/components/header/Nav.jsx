@@ -17,7 +17,7 @@ export default Nav
 const StyledNav = styled.div`
   a{
     font-family: ${pr => pr.theme.fonts.primary};
-    color: ${pr => pr.theme.colors.berry};
+    color: white;
     text-decoration: none;
     margin-right: 1em;
   }
