@@ -7,13 +7,13 @@ const path = require('path')
 const axios = require('axios')
 
 const pointEndpoint = process.env.USER_POINTS_ENDPOINT
+const botConfigEP = process.env.BOT_CONFIG_BOT_ENDPOINT 
+
 
 
 const getTarget = async () => {
-    //get target from json file 
-    const targetLocation = path.join(__dirname, 'bot-config.json')
-    const targetData = JSON.parse(await fs.readFile(targetLocation, 'utf-8'))
-    const target = targetData.target
+    const res = await axios.get(botConfigEP)
+    const target = res.data[0].target
     return target
 }
 
@@ -33,7 +33,6 @@ const getPoints = async (user) => {
     }catch(err){
         console.log('Error Getting Points berry.js: ', err)
     }
-
 }
 
 async function berry() {

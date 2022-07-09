@@ -1,13 +1,12 @@
 {
-    "target": "",
     "tokenType": "",
     "scope": [
         "channel:moderate",
         "chat:edit",
         "chat:read"
     ],
-    "expiresIn": 14166,
-    "obtainmentTimestamp": 1657159266318,
+    "expiresIn": 15116,
+    "obtainmentTimestamp": 1657334373238,
     "clientId": "",
     "clientSecret": "",
     "accessToken": "",
@@ -17,5 +16,10 @@
         "voteStart": "",
         "voteEnd": ""
     },
-    "botState": true
+    "botState": true,
+    "testConfig": {
+        "testChannel": "",
+        "testMessage": ""
+    },
+    "target": "rhyezbot"
 }

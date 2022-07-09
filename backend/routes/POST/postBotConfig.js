@@ -15,7 +15,10 @@ router.post("/", async (req, res) => {
     configData.refreshToken = refreshToken
     await fs.writeFile(configLocation, JSON.stringify(configData, null, 4, 'UTF-8'))
     console.log('Config written to file')
-    res.send(configData)
+    //Restart Server
+    process.exit()
+
+    res.send(res.status)
 })
 
 module.exports = router;

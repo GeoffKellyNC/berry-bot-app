@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as action from '../../store/berry-twitch/action-creators'
 import styled from 'styled-components';
@@ -14,15 +15,19 @@ function ConfigureBot(props) {
     const { botConfig, configureBerry } = props;
     const [formValues, setFormValues] = useState(initialFormValues);
 
+    let navigate = useNavigate();
+
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         configureBerry(formValues);
-        setFormValues(initialFormValues);
+        await setFormValues(initialFormValues);
+        navigate('/');
     }
 
 
@@ -84,7 +89,7 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, action)(ConfigureBot)
 
 
-const ConfigureBotStyled = styled.div`
+const ConfigureBotStyled = styled.form`
     font-family: ${pr => pr.theme.fonts.primary};
     font-size: ${pr => pr.theme.fontSizes.medium};
     color: white;

@@ -1,15 +1,26 @@
 import axios from 'axios';
 import * as types from './action-types';
 
+const botConfigEP = 'https://62c5c1fc134fa108c25b8929.mockapi.io/botConfig';
 
-export const setTarget = (target) => (dispatch) => {
-    axios.post('http://localHost:9001/postTarget', { target })
+
+export const setTarget =  (target) => async (dispatch) => {
+    try{
+        const res = await axios.patch(`${botConfigEP}/1`, {target})
+        res.status === 200 ? console.log('Target Set') : console.log('Target Not Set')
+
+    }catch(err){
+        console.log('Error in setTarget: ', err)
+    }
+}
+
+export const getTarget = () => (dispatch) => {
+    console.log('Getting Target....')
+    axios.get(`${botConfigEP}`)
         .then(res => {
-            const target = res.data;
-            dispatch({
-                type: types.GET_TARGET,
-                payload: target
-            });
+            const target = res.data[0].target
+            dispatch({type: types.GET_TARGET, payload: target })
+            return target
         })
         .catch(err => {
             console.error(err);
@@ -43,6 +54,7 @@ export const startMod = () => (dispatch) => {
 }
 
 export const configureBerry = (botConfig) => (dispatch) => {
+    console.log('Configuring Berry....')
     axios.post('http://localHost:9001/postBotConfig', { botConfig })
         .then(res => {
             console.log('Bot Config Set')

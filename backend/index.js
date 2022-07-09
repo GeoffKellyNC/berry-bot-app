@@ -25,10 +25,10 @@ app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
-
+ 
 
 // GET 
-app.use('/getTarget', routerGetTarget); // route to get target
+app.use('/getTarget', routerGetTarget); // route to get target 
 app.use('/botConfig', routerGetBotConfig); // route to retrieve bot config data
 
 

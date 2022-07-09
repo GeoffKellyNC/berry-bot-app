@@ -140,7 +140,13 @@ See the [open issues](https://github.com/geoffkellync/crypto-app-2.0/issues) for
 <!-- change-log -->
 ## change-log
 
-### 0.0.1 - NEW FEATURES AND BUG FIXES 06/09/2021
+### 0.0.2 - NEW FEATURES AND BUG FIXES 07/03/2022
+- [x] Added Moderation feature to bot.
+      - Points system that automatically assigns users points based on bad activity in chat. Such as bad language, bad emotes, etc. Punishments are then applied to the user automatically.
+- [x] Added the Ability to Start moderation function in the UI.
+- [x] Added the Ability to start a vote from the UI.
+
+### 0.0.1 - NEW FEATURES AND BUG FIXES 06/09/2022
 - [x] Implemented Twitch API
 - [x] Implemented Adding Target (Channel) to the Bot Via Web Form
 

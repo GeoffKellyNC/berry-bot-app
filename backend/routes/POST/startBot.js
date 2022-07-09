@@ -23,10 +23,10 @@ const setBotState = async () => {
 
 
 router.post("/", (req, res) => {   // Start Berry
+    console.log('Server Starting Berry...')
     const { data } = req.body;
     if (data === 'startBot'){
       startBerry();
-      setBotState();
     }
     res.sendStatus(200);
   })

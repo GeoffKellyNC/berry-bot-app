@@ -5,24 +5,19 @@ const css = require("css-loader");
 After that apply all the rules in module.rules and produce the output and place it in main.js in the public folder.*/
 
 module.exports={
-    /** "mode"
-     * the environment - development, production, none. tells webpack 
-     * to use its built-in optimizations accordingly. default is production 
-     */
+
     mode: "development", 
-    /** "entry"
-     * the entry point 
-     */
+
     entry: "./src/index.js", 
     output: {
-        /** "path"
-         * the folder path of the output file 
-         */
+
         path: path.resolve(__dirname, "public"),
-        /** "filename"
-         * the name of the output file 
-         */
-        filename: "main.js"
+
+        filename: "main.js",
+
+        publicPath: "/"
+        
+
     },
     /** "target"
      * setting "node" as target app (server side), and setting it as "web" is 
@@ -51,7 +46,9 @@ module.exports={
         /** "liveReload"
          * disable live reload on the browser. "hot" must be set to false for this to work
         */
-        liveReload: true
+        liveReload: true,
+
+        historyApiFallback: true,
     },
     resolve: {
         /** "extensions" 
@@ -59,7 +56,7 @@ module.exports={
          * resolve the one with the extension listed first in the array and skip the rest. 
          * This is what enables users to leave off the extension when importing
          */
-        extensions: ['.js','.jsx','.json'],
+        extensions: ['.js','.jsx','.json', '.webp'],
         alias: {
             '@': path.resolve(__dirname, 'src'),
             '@assets': path.resolve(__dirname, 'src/assets'),
@@ -78,6 +75,7 @@ module.exports={
                 test: /\.(js|jsx)$/,    //kind of file extension this rule should look for and apply in test
                 exclude: /node_modules/, //folder to be excluded
                 use:  'babel-loader' //loader which we are going to use
+                
             },
             {
                 test: /\.css$/i,
