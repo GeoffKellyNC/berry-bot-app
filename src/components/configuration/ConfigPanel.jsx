@@ -69,6 +69,15 @@ const ConfigPanelStyled = styled.div`
         border: 1px solid rgba(255, 255, 255, 0.125);
         height: 3rem;
         width: 100%;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        right: 5%;
+
+        &:hover{
+            transform: scale(1.05);
+            color: white;
+        }
+
 
     }
 
