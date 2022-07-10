@@ -12,25 +12,20 @@ import StartMod from '../bottons/StartMod'
 
 const Panel = (props) => {
     const { 
-        target, 
         startVote, 
         startMod,
-        getTarget, 
     } = props;
 
     const [botRunning , setBotRunning] = useState(localStorage.getItem('botRunning'));
 
 
-    useEffect(() => {
-        getTarget()
-    }, [])
+
         
 
     return (
         <PanelStyled>
             <div className='panel-info-display'>
                 <h3 className = 'control-panel-text'> Control Panel </h3>
-                <h4 className = 'target-channel-text'> Target: <span>{ target.length === 0 ? 'No Target Set' : target }</span></h4>
             </div>
             <div className = 'panel-btns'>
                 <StartbotBtn />

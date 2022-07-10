@@ -25,6 +25,10 @@ export default Header
 
 
 const HeaderStyled = styled.header`
+    background: rgba(255, 255, 255, 0.375);
+    box-shadow: 0 0.75rem 2rem 0 rgb(0 0 0 / 10%);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
 
   .header-content{
     width: 100%;

@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 
-import Panel from '../components/control-panel/Panel'
 import ConfigPanel from '../components/configuration/ConfigPanel'
 import Hero from '../components/Hero'
+import Panel from '../components/control-panel/Panel'
+import StatusBar from '../components/statusBar/StatusBar'
 
 
 function Home() {
@@ -12,6 +13,7 @@ function Home() {
   return (
     <HomeStyled>
       <Hero />
+      <StatusBar />
       <div className = 'home-body'>
         <Panel  />
         <ConfigPanel />
