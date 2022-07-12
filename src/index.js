@@ -5,6 +5,7 @@ import './master-css/index.css';
 import {ThemeProvider} from 'styled-components';
 import theme from './theme/theme';
 
+
 import { Provider } from 'react-redux';
 import { applyMiddleware, compose, legacy_createStore } from 'redux'
 import thunk from 'redux-thunk'

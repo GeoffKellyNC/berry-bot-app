@@ -1,37 +1,38 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+import styled from 'styled-components';
 
 
 //components 
-import Header from './components/header/Header';
+import Nav from './components/nav-bar/Nav';
 import Home from './views/Home';
 import ConfigureBot from './views/ConfigureBot';
-
-
-
 
 
 const App = () => {
   
 
-     
-
     return (
         <>
             <Router>
-                <Header />
-                <div>
+                <Nav />
+                <AppContainer className='app-container'>
                     <Routes>
                         <Route path="/configure" element = {<ConfigureBot />} />
                         <Route exact path="/" element = {<Home />} />
                     </Routes>
-                </div>
+                </AppContainer>
             </Router>
         </>
     );
 }
 
 
-
 export default App;
+
+
+const AppContainer = styled.div`
+    max-width: 85%;
+    margin: 0 0 0 auto;
+
+`

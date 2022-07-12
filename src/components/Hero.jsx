@@ -12,20 +12,16 @@ const Hero = () => {
 export default Hero
 
 const HeroStyled = styled.div`
-    font-family: ${pr => pr.theme.fonts.primary};
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 1rem;
 
-    .hero-title{
-        font-size: ${pr => pr.theme.fontSizes.medium};
-        font-weight: bold;
-        color: ${pr => pr.theme.colors.accent};
-        margin-bottom: 1rem;
-    }
+  .hero-title {
+    font-family: ${pr => pr.theme.fonts.primary};
+    font-size: ${pr => pr.theme.fontSizes.large};
+    color: ${pr => pr.theme.colors.berry};
+    text-align: center;
+    padding: 1.4rem;
+    font-weight: bold;
+  }
+
 
 
 

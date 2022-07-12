@@ -25,7 +25,7 @@ const Panel = (props) => {
     return (
         <PanelStyled>
             <div className='panel-info-display'>
-                <h3 className = 'control-panel-text'> Control Panel </h3>
+                <h3 className = 'control-panel-text'> Bot Controls </h3>
             </div>
             <div className = 'panel-btns'>
                 <StartbotBtn />
@@ -48,21 +48,28 @@ export default connect(mapStateToProps, actions)(Panel)
 
 
 const PanelStyled = styled.div`
+    padding-top: 2rem;
+    width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
-    width: 100%;
-    height: 100%;
-
-    .panel-info-display{
+    color: ${pr => pr.theme.colors.white};
+    font-family: ${pr => pr.theme.fonts.primary};
+    
+    .panel-btns{
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        padding: 1em;
-        border-bottom: 1px solid #fff;
     }
+
+    .control-panel-text{
+        font-size: ${pr => pr.theme.fontSizes.medium};
+        font-weight: bold;
+        margin-bottom: 1rem;
+        margin-left: 3rem;
+    }
+ 
 
 
 

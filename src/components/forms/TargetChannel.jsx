@@ -33,8 +33,7 @@ function TargetChannel(props) {
 
     return (
         <TargetForm onSubmit={handleSubmit}>
-            <label>
-                Channel:
+            <label>Set Target Channel:</label>
                 <input 
                     type="text" 
                     value = {formValues.target} 
@@ -42,7 +41,6 @@ function TargetChannel(props) {
                     name="target"
                     className = 'target-text-input'
                 />
-            </label>
             <button type="submit">Submit</button>
         </TargetForm>
     )
