@@ -1,10 +1,6 @@
 {
   "tokenType": "",
-  "scope": [
-    "channel:moderate",
-    "chat:edit",
-    "chat:read"
-  ],
+  "scope": ["channel:moderate", "chat:edit", "chat:read"],
   "expiresIn": 15198,
   "obtainmentTimestamp": 1657593165591,
   "clientId": "",
