@@ -3,20 +3,14 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import styled from 'styled-components';
 
 
-
 //components 
 import Nav from './components/nav-bar/Nav';
 import Home from './views/Home';
 import ConfigureBot from './views/ConfigureBot';
 
 
-
-
-
 const App = () => {
   
-
-     
 
     return (
         <>
@@ -32,7 +26,6 @@ const App = () => {
         </>
     );
 }
-
 
 
 export default App;

@@ -5,8 +5,8 @@
         "chat:edit",
         "chat:read"
     ],
-    "expiresIn": 15116,
-    "obtainmentTimestamp": 1657334373238,
+    "expiresIn": 15198,
+    "obtainmentTimestamp": 1657593165591,
     "clientId": "",
     "clientSecret": "",
     "accessToken": "",
@@ -21,5 +21,5 @@
         "testChannel": "",
         "testMessage": ""
     },
-    "target": "rhyezbot"
+    "target": ""
 }
