@@ -13,12 +13,10 @@ function Home() {
   return (
     <HomeStyled>
       <Hero />
-      <StatusBar />
       <div className = 'home-body'>
-        <Panel  />
-        <ConfigPanel />
+        <StatusBar />
+        <Panel />
       </div>
-
     </HomeStyled>
   )
 }
@@ -28,16 +26,9 @@ function Home() {
 export default Home
 
 const HomeStyled = styled.div`
-  color: white;
 
   .home-body {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    margin: 3rem 0;
+    background: rgb(13 13 15 / 75%);
   }
 
 `

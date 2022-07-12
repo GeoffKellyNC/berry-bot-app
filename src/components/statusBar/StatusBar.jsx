@@ -20,13 +20,13 @@ const StatusBar = (props) => {
   return (
     <StatusBarStyled>
         <div className = 'status-target'>
-            <p className = 'status-target-text'>Target: {target.length > 1 ? target : 'No Target Set'}</p>
+            <p className = 'status-target-text status-text'>Target:<span>{target.length > 1 ? target : 'No Target Set'}</span> </p>
         </div>
         <div className = 'bot-status'>
             <p className = 'bot-status-text status-text'>Bot Status: <span>{props.botRunning ? 'Running': 'Not Running'}</span></p>
         </div>
         <div className = 'mod-status'>
-            <p className = 'mod-status-text'>Mod Status: <span>{props.modRunning ? 'Running': 'Not Running'}</span></p>
+            <p className = 'mod-status-text status-text'>Mod Status: <span>{props.modRunning ? 'Running': 'Not Running'}</span></p>
         </div>
     </StatusBarStyled>
   )
@@ -42,19 +42,22 @@ export default connect(mapStateToProps, actions)(StatusBar)
 
 const StatusBarStyled = styled.div`
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0.5em;
-    background: rgba(255, 255, 255, 0.375);
-    box-shadow: 0 0.75rem 2rem 0 rgb(0 0 0 / 10%);
-    border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
-    width: 80%;
-    margin: 0 auto;
-    height: 5em;
-    font-family: ${pr => pr.theme.fonts.primary};
+    border-top: 1px solid ${pr => pr.theme.colors.berry};
     color: white;
-    font-size: ${pr => pr.theme.fontSizes.meduim};
+    font-family: ${pr => pr.theme.fonts.primary};
+    font-size: ${pr => pr.theme.fontSizes.medium};
+    padding: 10px;
+
+    .status-text{
+        color: ${pr => pr.theme.colors.secondary};
+        }
+
+    .status-text span {
+        color: ${pr => pr.theme.colors.primary};
+        margin: 0 10px;
+    }
+
 
 
 

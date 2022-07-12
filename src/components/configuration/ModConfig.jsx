@@ -56,40 +56,5 @@ export default ModConfig
 const ModConfigStyled = styled.div`
 
 
-.word-form{
-    display: flex;
-    flex-direction: row;
-    align-items: center;    
-}
-
-.word-form input{
-    height: 23px;
-    width: 200px;
-    border: 1px solid ${pr => pr.theme.colors.secondary};
-    font-family: ${pr => pr.theme.fonts.primary};
-    background-color: rgba(0,0,0,0.1);
-    color: ${pr => pr.theme.colors.secondary};
-    outline: none;
-    border-radius: 5px;
-}
-
-.mod-word-btn {
-    background: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-
-    .mod-config-title{
-        font-size: 1.5rem;
-        color: #fff;
-        font-weight: bold;
-    }
-
-    .mod-add-word-icon{
-        font-size: 1.5rem;
-        color: #fff;
-        border: 1px solid #fff;
-    }
 
 `
