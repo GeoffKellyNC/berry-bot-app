@@ -1,0 +1,1 @@
+export const GET_POINTS_DATA = 'GET_POINTS_DATA';

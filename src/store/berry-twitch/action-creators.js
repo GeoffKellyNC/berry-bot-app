@@ -15,7 +15,6 @@ export const setTarget =  (target) => async (dispatch) => {
 }
 
 export const getTarget = () => (dispatch) => {
-    console.log('Getting Target....')
     axios.get(`${botConfigEP}`)
         .then(res => {
             const target = res.data[0].target
@@ -62,4 +61,16 @@ export const configureBerry = (botConfig) => (dispatch) => {
         .catch(err => {
             console.error(err);
         })
+}
+
+
+export const pingBerry = () => async (dispatch) => {
+    try{
+        const res = await axios.post('http://localHost:9001/pingBerry', { data: 'ping' })
+        console.log('Ping Res: ', res)
+        res.status === 200 ? dispatch({ type: types.GET_BOT_STATUS, payload: { running: true} }): dispatch({ type: types.GET_BOT_STATUS, payload: { running: false} })
+    }catch(err){
+        console.log('Error in pingBerry: ', err)
+    }
+    
 }

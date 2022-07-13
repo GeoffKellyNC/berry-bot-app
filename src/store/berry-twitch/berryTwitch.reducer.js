@@ -18,3 +18,12 @@ export function botConfig(state = {}, action) {
       return state;
   }
 } 
+
+export function botStatus(state = { running: false}, action) {
+  switch (action.type) {
+    case types.GET_BOT_STATUS:
+      return action.payload;
+    default:
+      return state;
+  }
+}

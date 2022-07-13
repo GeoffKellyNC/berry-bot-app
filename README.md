@@ -125,8 +125,6 @@ Berry Bot Public Release App
 
 - [ ] Implementing Discord API
 - [ ] Updating UI to match new Twitch API
-- [ ] Implementing Twitch API
-- [ ] Voting Feature
 
 
 See the [open issues](https://github.com/geoffkellync/crypto-app-2.0/issues) for a full list of proposed features (and known issues).
@@ -139,6 +137,12 @@ See the [open issues](https://github.com/geoffkellync/crypto-app-2.0/issues) for
 
 <!-- change-log -->
 ## change-log
+
+### 0.0.3 - NEW FEATURES AND BUG FIXES 07/13/2022
+- [x] UI Change to be more modular
+- [x] Added Side menu to the UI
+- [x] Added Monderation Panel to home screen. This includes so far being able to see current user points and to search through the database for a specific user.
+-[x] Added Server status to the status bar. This is using a ping set up on the backend to ping the server and display the status.
 
 ### 0.0.2 - NEW FEATURES AND BUG FIXES 07/03/2022
 - [x] Added Moderation feature to bot.

@@ -1,6 +1,6 @@
 {
   "name": "berry-bot-backend",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Berry Bots Backend!",
   "main": "index.js",
   "scripts": {

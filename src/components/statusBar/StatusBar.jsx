@@ -7,12 +7,13 @@ import * as actions from '../../store/berry-twitch/action-creators'
 
 const StatusBar = (props) => {
 
-    const { target, getTarget } = props
+    const { target, getTarget, pingBerry, botStatus } = props
 
-    console.log('target', target)
+
 
     useEffect(() => {
         getTarget()
+        pingBerry()
     }, [])
 
 
@@ -28,13 +29,17 @@ const StatusBar = (props) => {
         <div className = 'mod-status'>
             <p className = 'mod-status-text status-text'>Mod Status: <span>{props.modRunning ? 'Running': 'Not Running'}</span></p>
         </div>
+        <div className = 'server-status'>
+            <p className = 'server-status-text status-text'>Server Status: <span>{botStatus.running ? 'Running': 'Not Running'}</span></p>
+        </div>
     </StatusBarStyled>
   )
 }
 
 const mapStateToProps = state => {
     return {
-        target: state.target
+        target: state.target,
+        botStatus: state.botStatus,
     }
 }
 
