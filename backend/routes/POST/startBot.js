@@ -7,18 +7,8 @@ const { berry } = require('../../twitch/berry');
 
 
 const startBerry = () => {
-    berry();
+    berry(); 
   } 
-
-const setBotState = async () => {
-  const configLocation = path.join(__dirname, '../../twitch/bot-config.json')
-  const data = await fs.readFileSync(configLocation, 'utf8');
-  const config = await JSON.parse(data);
-  const newData = {...config, botState: !config.botState.running};
-  await fs.writeFileSync(configLocation, JSON.stringify(newData));
-
-}
-
 
 
 

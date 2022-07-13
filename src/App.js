@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 
 //components 
-import Nav from './components/nav-bar/Nav';
+import Nav from './components/header/Nav';
 import Home from './views/Home';
 import ConfigureBot from './views/ConfigureBot';
 

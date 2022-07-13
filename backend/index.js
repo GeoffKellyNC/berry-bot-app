@@ -11,6 +11,7 @@ const routerPostBotConfig = require('./routes/POST/postBotConfig');
 const routerGetBotConfig = require('./routes/GET/getBotConfig');
 const routerStartVote = require('./routes/POST/startVote')
 const routerStartMod = require('./routes/POST/startMod')
+const routerPing = require('./routes/POST/ping')
 
 
 
@@ -38,6 +39,7 @@ app.use('/startBot', routerStartBot); // route to the start bot function
 app.use('/postBotConfig', routerPostBotConfig); // route used to set bot config
 app.use('/startVote', routerStartVote) // route used to start voting
 app.use('/startMod', routerStartMod) // route used to start berry moderation 
+app.use('/pingBerry', routerPing) // route used to ping the server
 
 
 app.listen(PORT, () => {

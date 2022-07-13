@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 
-import ConfigPanel from '../components/configuration/ConfigPanel'
 import Hero from '../components/Hero'
+import ModPanel from '../components/mod-panel/ModPanel'
 import Panel from '../components/control-panel/Panel'
 import StatusBar from '../components/statusBar/StatusBar'
+
 
 
 function Home() {
@@ -16,6 +17,7 @@ function Home() {
       <div className = 'home-body'>
         <StatusBar />
         <Panel />
+        <ModPanel />
       </div>
     </HomeStyled>
   )
