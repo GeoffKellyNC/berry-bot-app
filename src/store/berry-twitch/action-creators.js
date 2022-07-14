@@ -1,18 +1,7 @@
 import axios from 'axios';
 import * as types from './action-types';
 
-const botConfigEP = 'https://62c5c1fc134fa108c25b8929.mockapi.io/botConfig';
-
-
-export const setTarget =  (target) => async (dispatch) => {
-    try{
-        const res = await axios.patch(`${botConfigEP}/1`, {target})
-        res.status === 200 ? console.log('Target Set') : console.log('Target Not Set')
-
-    }catch(err){
-        console.log('Error in setTarget: ', err)
-    }
-}
+const botConfigEP = process.env.REACT_APP_BOT_CONFIG_EP;
 
 export const getTarget = () => (dispatch) => {
     axios.get(`${botConfigEP}`)
@@ -52,15 +41,20 @@ export const startMod = () => (dispatch) => {
         .catch(err => console.error(err))
 }
 
-export const configureBerry = (botConfig) => (dispatch) => {
-    console.log('Configuring Berry....')
-    axios.post('http://localHost:9001/postBotConfig', { botConfig })
-        .then(res => {
-            console.log('Bot Config Set')
-        })
-        .catch(err => {
-            console.error(err);
-        })
+
+export const configureBerry = (botConfig) => async (dispatch) => {
+    try{
+        const getRes = await axios.get(botConfigEP)
+        const configData = getRes.data[0]
+        const newBotConfig = {...configData, ...botConfig}
+        const postRes = await axios.patch(`${botConfigEP}/1`, newBotConfig)
+
+        dispatch({type: types.GET_BOT_CONFIG, payload: newBotConfig})
+
+    }catch(err){
+        console.log(err)
+    }
+
 }
 
 

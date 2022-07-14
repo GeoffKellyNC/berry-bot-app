@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const modEP ='https://62c5c1fc134fa108c25b8929.mockapi.io/moderation'
+const modEP = process.env.REACT_APP_BERRY_MOD_EP;
 
 
 export const postNewWord = async (word) => {

@@ -9,6 +9,7 @@ const initialFormValues = {
     clientId: '',
     clientSecret: '',
     refreshToken: '',
+    target: ''
 }
 
 function ConfigureBot(props) {
@@ -33,6 +34,16 @@ function ConfigureBot(props) {
 
   return (
     <ConfigureBotStyled>
+        <label>
+            <span> Target: </span>
+        </label>
+        <input 
+            type="text" 
+            value = {formValues.target} 
+            onChange={handleChange} 
+            name="target"
+            className = 'target-text-input'
+        />
         <label> 
             <span>Access Token: </span>
         </label>
