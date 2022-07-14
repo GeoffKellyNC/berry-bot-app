@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import Nav from './components/header/Nav';
 import Home from './views/Home';
 import ConfigureBot from './views/ConfigureBot';
+import Console from './views/Console'
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
                 <Nav />
                 <AppContainer className='app-container'>
                     <Routes>
+                        <Route path = '/console' element = {<Console />} />
                         <Route path="/configure" element = {<ConfigureBot />} />
                         <Route exact path="/" element = {<Home />} />
                     </Routes>

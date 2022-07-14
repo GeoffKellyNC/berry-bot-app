@@ -45,7 +45,7 @@ function Nav() {
 
       <div className='nav-container'>
         <VscDebugConsole className='nav-icon' />
-        <NavLink className=' nav-debug' to="/debug">Console</NavLink>
+        <NavLink className=' nav-debug' to="/console">Console</NavLink>
       </div>
 
       <div className='nav-container'>
