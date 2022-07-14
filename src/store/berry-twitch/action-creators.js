@@ -3,6 +3,10 @@ import * as types from './action-types';
 
 const botConfigEP = process.env.REACT_APP_BOT_CONFIG_EP;
 
+
+
+
+
 export const getTarget = () => (dispatch) => {
     axios.get(`${botConfigEP}`)
         .then(res => {

@@ -3,7 +3,9 @@ import axios from 'axios';
 
 
 
-const pointEP = process.env.REACT_APP_BERRY_POINTS_EP;
+// const pointEP = process.env.REACT_APP_BERRY_POINTS_EP;
+
+const pointEP = 'https://62c5c1fc134fa108c25b8929.mockapi.io/userPoints'
 
 
 
