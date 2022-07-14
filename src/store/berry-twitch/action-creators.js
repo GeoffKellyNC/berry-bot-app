@@ -2,14 +2,11 @@
 import axios from 'axios';
 import * as types from './action-types';
 
-const botConfigEP = process.env.REACT_APP_BOT_CONFIG_EP;
+const botConfigEP = 'https://62c5c1fc134fa108c25b8929.mockapi.io/botConfig'
 
-const backEndEP = process.env.REACT_APP_BACKEND_EP 
+const backEndEP = 'https://berry-bot-backend-heroku.herokuapp.com'
 
 const localHost = 'http://localhost:9001';
-
-
-
 
 
 export const getTarget = () => (dispatch) => {
