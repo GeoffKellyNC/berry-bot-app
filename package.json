@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server ./src/index.js",
-    "build": "Webpack ./src/index.js",
+    "build": "Webpack ./public/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
