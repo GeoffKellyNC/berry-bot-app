@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../../store/berry-points/berry-points.creators'

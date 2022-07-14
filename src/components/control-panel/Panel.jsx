@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
 import * as actions from '../../store/berry-twitch/action-creators'
@@ -16,12 +16,7 @@ const Panel = (props) => {
         startMod,
     } = props;
 
-    const [botRunning , setBotRunning] = useState(localStorage.getItem('botRunning'));
-
-
-
-        
-
+    
     return (
         <PanelStyled>
             <div className='panel-info-display'>

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 export default {
     colors: {
         primary: '#0070f3', // blue //  rgba(0, 112, 243, 1)
