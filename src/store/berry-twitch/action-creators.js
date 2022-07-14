@@ -30,7 +30,7 @@ export const startBerry = () => (dispatch) => {
             res.status === 200 ? console.log('Bot Started Successfully') : console.log('There was an error starting the bot: ', res)
         })
         .catch(err => {
-            console.error(err);
+            console.error(err);  
         })
 }
 
