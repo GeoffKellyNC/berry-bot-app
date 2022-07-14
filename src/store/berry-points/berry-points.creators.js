@@ -2,7 +2,6 @@ import * as types from './berry-points.types';
 import axios from 'axios';
 
 
-// const pointEP = process.env.REACT_APP_MOD_POINT_ENDPOINT;
 
 const pointEP = 'https://62c5c1fc134fa108c25b8929.mockapi.io/userPoints'
 

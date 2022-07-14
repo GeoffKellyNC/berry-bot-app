@@ -105,3 +105,5 @@ dist
 t.tokens.txt
 backend/ecosystem.config.js
 plan.txt
+
+.env
