@@ -4,6 +4,10 @@ import * as types from './action-types';
 
 const botConfigEP = process.env.REACT_APP_BOT_CONFIG_EP;
 
+const backEndEP = process.env.REACT_APP_BACKEND_EP 
+
+const localHost = 'http://localhost:9001';
+
 
 
 
@@ -21,7 +25,7 @@ export const getTarget = () => (dispatch) => {
 }
 
 export const startBerry = () => (dispatch) => {
-    axios.post('http://localHost:9001/startBot', { data: 'startBot' })
+    axios.post(`${backEndEP}/startBot`, { data: 'startBot' })
         .then(res => {
             res.status === 200 ? console.log('Bot Started Successfully') : console.log('There was an error starting the bot: ', res)
         })
@@ -31,7 +35,7 @@ export const startBerry = () => (dispatch) => {
 }
 
 export const startVote = () => (dispatch) => {
-    axios.post('http://localHost:9001/startVote', { data: 'startVote'})
+    axios.post(`${backEndEP}/startVote`, { data: 'startVote'})
         .then(res => {
             res.status === 200 ? console.log('Vote Started Successfully') : console.log('There was an error starting the vote: ', res)
         })
@@ -39,7 +43,7 @@ export const startVote = () => (dispatch) => {
 }
 
 export const startMod = () => (dispatch) => {
-    axios.post('http://localHost:9001/startMod', { data: 'startMod'})
+    axios.post(`${backEndEP}/startMod`, { data: 'startMod'})
         .then(res => {
             res.status === 200 ? console.log('Moderation Started Successfully') : console.log('There was an error starting Moderation: ', res)
         })
@@ -65,7 +69,7 @@ export const configureBerry = (botConfig) => async (dispatch) => {
 
 export const pingBerry = () => async (dispatch) => {
     try{
-        const res = await axios.post('http://localHost:9001/pingBerry', { data: 'ping' })
+        const res = await axios.post('${backEndEP}/pingBerry', { data: 'ping' })
         console.log('Ping Res: ', res)
         res.status === 200 ? dispatch({ type: types.GET_BOT_STATUS, payload: { running: true} }): dispatch({ type: types.GET_BOT_STATUS, payload: { running: false} })
     }catch(err){
