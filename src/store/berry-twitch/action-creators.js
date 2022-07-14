@@ -69,7 +69,7 @@ export const configureBerry = (botConfig) => async (dispatch) => {
 
 export const pingBerry = () => async (dispatch) => {
     try{
-        const res = await axios.post('${backEndEP}/pingBerry', { data: 'ping' })
+        const res = await axios.post(`${backEndEP}/pingBerry`, { data: 'ping' })
         console.log('Ping Res: ', res)
         res.status === 200 ? dispatch({ type: types.GET_BOT_STATUS, payload: { running: true} }): dispatch({ type: types.GET_BOT_STATUS, payload: { running: false} })
     }catch(err){
