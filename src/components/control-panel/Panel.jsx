@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
 import * as actions from '../../store/berry-twitch/action-creators'
@@ -16,7 +16,7 @@ const Panel = (props) => {
         startMod,
     } = props;
 
-    
+
     return (
         <PanelStyled>
             <div className='panel-info-display'>
