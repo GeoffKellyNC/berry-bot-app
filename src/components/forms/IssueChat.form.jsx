@@ -18,8 +18,10 @@ const IssueChatForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log('handleSubmit')
-        const message = formValues.message
+        const message = { data : formValues.message}
+        console.log(message)
         issueMessage(message)
+        setFormValues(iFormValues)
     }
 
   return (
@@ -30,6 +32,7 @@ const IssueChatForm = () => {
             name = 'message'
             value = {formValues.message}
             onChange = { handleChange }
+            placeholder = 'Send Message to twitch chat'
         />
         <button onClick={ handleSubmit } className = 'chat-sbmt-btn'>CHAT</button>
     </IssueChatStyled>
