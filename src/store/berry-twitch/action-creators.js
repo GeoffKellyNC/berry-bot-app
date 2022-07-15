@@ -22,7 +22,7 @@ export const getTarget = () => (dispatch) => {
 }
 
 export const startBerry = () => (dispatch) => {
-    axios.post(`${localHost}/startBot`, { data: 'startBot' })
+    axios.post(`${backEndEP}/startBot`, { data: 'startBot' })
         .then(res => {
             res.status === 200 ? console.log('Bot Started Successfully') : console.log('There was an error starting the bot: ', res)
         })
